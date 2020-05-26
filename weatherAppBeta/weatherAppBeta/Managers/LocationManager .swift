@@ -8,7 +8,7 @@
 
 import CoreLocation
 
-class LocationService {
+class LocationManager {
     let locationManager = CLLocationManager()
     var lat: Double?
     var lon: Double? 
