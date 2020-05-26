@@ -6,4 +6,21 @@
 //  Copyright © 2020 Kendall Poindexter. All rights reserved.
 //
 
-import Foundation
+import CoreLocation
+
+class LocationService {
+    let locationManager = CLLocationManager()
+    var lat: Double?
+    var lon: Double? 
+    
+    func requestLocation() {
+        requestUserAuthorization {
+            locationManager.requestLocation()
+        }
+    }
+    
+    private func requestUserAuthorization(completion: () -> Void) {
+        locationManager.requestWhenInUseAuthorization()
+        completion()
+    }
+}
